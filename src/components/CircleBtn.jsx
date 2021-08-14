@@ -1,11 +1,11 @@
 import React from 'react';
 import { View, Text, StyleSheet } from 'react-native';
-import { string } from 'prop-types';
+import { string, shape } from 'prop-types';
 
 export default function CircleBtn(props) {
-  const { children } = props;
+  const { children, style } = props;
   return (
-    <View style={styles.circleBtn}>
+    <View style={[styles.circleBtn, style]}>
       <Text style={styles.circleBtnLbl}>{ children }</Text>
     </View>
   );
@@ -13,6 +13,11 @@ export default function CircleBtn(props) {
 
 CircleBtn.propTypes = {
   children: string.isRequired,
+  style: shape(),
+};
+
+CircleBtn.defaultProps = {
+  style: null,
 };
 
 const styles = StyleSheet.create({
