@@ -16,12 +16,11 @@ export default function CircleBtn(props) {
 CircleBtn.propTypes = {
   style: shape(),
   name: String.isRequired,
-  onPress: func,
+  onPress: func.isRequired,
 };
 
 CircleBtn.defaultProps = {
   style: null,
-  onPress: null,
 };
 
 const styles = StyleSheet.create({
